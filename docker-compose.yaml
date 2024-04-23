@@ -1,0 +1,24 @@
+services:
+  tor:
+    image: "ssh/tor"
+    network_mode: host
+    container_name: ssh-tor
+    build:
+      context: tor
+      dockerfile: Dockerfile
+      args:
+        - TOR_UID=${TOR_UID}
+        - TOR_GID=${TOR_GID}
+    command: "/restart.sh"
+    env_file:
+      - ./.env
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "10"
+    volumes:
+      - data:/var/lib/tor
+volumes:
+  data:
