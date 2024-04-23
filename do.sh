@@ -17,6 +17,6 @@ case $1 in
         docker logs -f ssh-tor
     ;;
     onion )
-        docker exec -it ssh-tor cat /var/lib/tor/torssh/hostname
+        docker exec -t ssh-tor cat /var/lib/tor/torssh/hostname
     ;;
 esac
