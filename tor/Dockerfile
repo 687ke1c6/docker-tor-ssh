@@ -9,3 +9,4 @@ COPY    ./restart.sh /restart.sh
 
 RUN     chmod ug+x /restart.sh
 
+USER    debian-tor

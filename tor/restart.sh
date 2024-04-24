@@ -15,7 +15,7 @@ tor_options=(
   # --SocksPolicy "reject *"
   # --DataDirectory /var/lib/tor/.tor
   --DataDirectoryGroupReadable 1
-  --HiddenServiceDir /var/lib/tor/torssh
+  --HiddenServiceDir /var/lib/tor/torssh2
   --HiddenServicePort "22 127.0.0.1:22"
   # --HiddenServiceDir /var/lib/tor/http
   # --HiddenServicePort "80 127.0.0.1:80"
