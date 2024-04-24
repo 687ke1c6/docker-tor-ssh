@@ -2,8 +2,6 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-source .env
-
 case $1 in
     build )
         shift
@@ -16,9 +14,9 @@ case $1 in
         docker compose up -d
     ;;
     logs )
-        docker logs -f "$CONTAINER_NAME"
+        docker compose logs -f tor
     ;;
     onion )
-        docker exec -t "$CONTAINER_NAME" cat /var/lib/tor/torssh/hostname
+        docker compose exec -t tor cat /var/lib/tor/torssh/hostname
     ;;
 esac
