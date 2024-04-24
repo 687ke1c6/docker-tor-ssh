@@ -1,14 +1,11 @@
 services:
   tor:
-    image: "ssh/tor"
+    image: "ssh/tor:${BUILD_VERSION}"
     network_mode: host
-    container_name: ssh-tor
+    container_name: ${CONTAINER_NAME}
     build:
       context: tor
       dockerfile: Dockerfile
-      args:
-        - TOR_UID=${TOR_UID}
-        - TOR_GID=${TOR_GID}
     command: "/restart.sh"
     env_file:
       - ./.env

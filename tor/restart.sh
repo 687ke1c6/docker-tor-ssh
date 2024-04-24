@@ -4,9 +4,6 @@ IFS=$'\n\t'
 
 echo started tor for ssh/http
 
-# echo "## Set permissions on /var/lib/tor dir ###"
-# chmod 750 /var/lib/tor
-
 echo "## Starting tor #############################"
 
 tor_options=(
