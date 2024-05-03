@@ -6,7 +6,7 @@ services:
     build:
       context: tor
       dockerfile: Dockerfile
-    command: "/restart.sh"
+    command: ./restart.sh
     env_file:
       - ./.env
     restart: unless-stopped
