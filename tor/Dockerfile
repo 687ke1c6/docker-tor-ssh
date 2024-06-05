@@ -13,5 +13,4 @@ RUN     VER=$(lsb_release -sc) && \
 
 COPY    --chmod=750 --chown=debian-tor:debian-tor ./restart.sh /restart.sh
 
-
 USER    debian-tor
