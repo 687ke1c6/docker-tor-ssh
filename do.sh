@@ -19,4 +19,8 @@ case $1 in
     onion )
         docker compose exec -t tor cat /var/lib/tor/torssh/hostname
     ;;
+    ssh )
+        shift
+        ssh -o ProxyCommand='nc -X 5 -x 127.0.0.1:9050 %h %p' $1
+    ;;
 esac
